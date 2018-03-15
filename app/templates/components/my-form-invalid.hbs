@@ -1,0 +1,17 @@
+<p>my form invalid</p>
+<p>example:</p>
+<p>1. Fill in password input: abc12345</p>
+<p>2. Fill in password confirmation input: abc12345</p>
+<p>3. Click submit</p>
+<p>4. You will see "This field doesn't match password" error</p>
+
+<form>
+  {{input type="password" placeholder="password" value=changeset.password}}
+  {{input type="password" placeholder="password confirmation" value=changeset.passwordConfirmation}}
+
+  <button {{action "submit"}}>Submit</button>
+</form>
+
+{{#each errors as |error|}}
+  <p>key: {{error.key}}, validation: {{error.validation}}</p>
+{{/each}}

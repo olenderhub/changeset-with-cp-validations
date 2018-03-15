@@ -1,0 +1,18 @@
+<p>my form live validate</p>
+
+<p>example:</p>
+<p>1. Fill in password input: abc12345</p>
+<p>2. Fill in password confirmation input: abc12345</p>
+<p>3. You will see "This field doesn't match password" error</p>
+<p>4. Click submit</p>
+<p>5. You will not see errors</p>
+
+<form>
+  {{input type="password" placeholder="password" value=changeset.password}}
+  {{input type="password" placeholder="password confirmation" value=changeset.passwordConfirmation}}
+
+  <button {{action "submit"}}>Submit</button>
+</form>
+
+<p>password error: {{changeset.error.password.validation}}</p>
+<p>password confirmation error: {{changeset.error.passwordConfirmation.validation}}</p>
